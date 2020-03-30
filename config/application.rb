@@ -26,5 +26,6 @@ module Testguru
     config.generators.system_tests = nil
 
     config.time_zone = 'Moscow'
+    config.i18n.default_locale = :en
   end
 end
