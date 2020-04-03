@@ -35,5 +35,9 @@ Answer.create!(body: 'Marshal Dillon', question_id: q2.id)
 Answer.create!(body: 'Robert Zimmerman', correct: true, question_id: q2.id)
 
 # User seed
-User.create!(name: 'Veronika')
-User.create!(name: 'Victoria')
+u1 = User.create!(name: 'Veronika')
+u2 = User.create!(name: 'Victoria')
+
+TestsUser.create!(test_id: t1.id, user_id: u1.id)
+TestsUser.create!(test_id: t2.id, user_id: u1.id)
+TestsUser.create!(test_id: t1.id, user_id: u2.id)
