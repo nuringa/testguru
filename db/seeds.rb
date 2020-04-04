@@ -1,43 +1,27 @@
-Category.create!(name: 'IT')
-Category.create!(name: 'Sport')
+categories = Category.create!([{ name: 'IT' }, { name: 'Sport' }, { name: 'Art'}])
 
-# Category Art with 2 tests with questions and answers
-c1 = Category.create!(name: 'Art')
+tests = Test.create!([{ title: 'Painters', category_id: categories[2].id, level: 1 },
+                      { title: 'Musicians', category_id: categories[2].id }])
 
-t1 = Test.create!(title: 'Painters', category_id: c1.id, level: 1)
-q1 = Question.create!(
-  body: 'the Madonna Enthroned was painted by which Italian artist?',
-  test_id: t1.id
-)
-Answer.create!(body: 'Michelangelo', question_id: q1.id)
-Answer.create!(body: 'Leonardo da Vinchi', question_id: q1.id)
-Answer.create!(body: 'Giotto', correct: true, question_id: q1.id)
+questions = Question.create!([
+  { body: 'the Madonna Enthroned was painted by which Italian artist?', test_id: tests[0].id },
+  { body: "Norwegian artist Edvard Munch's most famous painting?", test_id: tests[0].id },
+  { body: 'What was Elton John’s middle name?', test_id: tests[1].id }
+                            ])
 
-q2 = Question.create!(
-  body: "Norwegian artist Edvard Munch's most famous painting?",
-  test_id: t1.id
-)
-Answer.create!(body: 'The Horror', question_id: q2.id)
-Answer.create!(body: 'The Ghost', question_id: q2.id)
-Answer.create!(body: 'The Scream', correct: true, question_id: q2.id)
+answers = Answer.create!([{ body: 'Michelangelo', question_id: questions[0].id },
+                          { body: 'Leonardo da Vinchi', question_id: questions[0].id },
+                          { body: 'Giotto', correct: true, question_id: questions[0].id },
+                          { body: 'The Horror', question_id: questions[1].id },
+                          { body: 'The Ghost', question_id: questions[1].id },
+                          { body: 'Giotto', correct: true, question_id: questions[1].id },
+                          { body: 'Hector', question_id: questions[2].id },
+                          { body: 'Herman', question_id: questions[2].id },
+                          { body: 'Hercules', correct: true, question_id: questions[2].id }])
 
-t2 = Test.create!(title: 'Musicians', category_id: c1.id)
-q1 = Question.create!(body: 'What was Elton John’s middle name?', test_id: t2.id)
+users = User.create!([{ name: 'Veronika' }, { name: 'Victoria'} ])
 
-Answer.create!(body: 'Hector', question_id: q1.id)
-Answer.create!(body: 'Herman', question_id: q1.id)
-Answer.create!(body: 'Hercules', correct: true, question_id: q1.id)
+tests_users = TestsUser.create!([{ test_id: tests[0].id, user_id: users[0].id },
+                                 { test_id: tests[1].id, user_id: users[1].id },
+                                 { test_id: tests[0].id, user_id: users[1].id }])
 
-q2 = Question.create!(body: 'What was Bob Dylan’s birth name?', test_id: t2.id)
-
-Answer.create!(body: 'Dylan Thomas', question_id: q2.id)
-Answer.create!(body: 'Marshal Dillon', question_id: q2.id)
-Answer.create!(body: 'Robert Zimmerman', correct: true, question_id: q2.id)
-
-# User seed
-u1 = User.create!(name: 'Veronika')
-u2 = User.create!(name: 'Victoria')
-
-TestsUser.create!(test_id: t1.id, user_id: u1.id)
-TestsUser.create!(test_id: t2.id, user_id: u1.id)
-TestsUser.create!(test_id: t1.id, user_id: u2.id)
