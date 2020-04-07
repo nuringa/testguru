@@ -1,27 +1,34 @@
+# uncomment if data erase is needed
+# Answer.delete_all
+# Question.delete_all
+# Test.delete_all
+# User.delete_all
+# TestsUser.delete_all
+# Category.delete_all
+
 categories = Category.create!([{ name: 'IT' }, { name: 'Sport' }, { name: 'Art'}])
 
-tests = Test.create!([{ title: 'Painters', category_id: categories[2].id, level: 1 },
-                      { title: 'Musicians', category_id: categories[2].id }])
+users = User.create!([{ name: 'Veronika' }, { name: 'Victoria' }])
+
+tests = Test.create!([{ title: 'Painters', category: categories[2], level: 1, author: users[1] },
+                      { title: 'Musicians', category: categories[2], author: users[0] }])
 
 questions = Question.create!([
-  { body: 'the Madonna Enthroned was painted by which Italian artist?', test_id: tests[0].id },
-  { body: "Norwegian artist Edvard Munch's most famous painting?", test_id: tests[0].id },
-  { body: 'What was Elton John’s middle name?', test_id: tests[1].id }
+  { body: 'the Madonna Enthroned was painted by which Italian artist?', test: tests[0] },
+  { body: "Norwegian artist Edvard Munch's most famous painting?", test: tests[0] },
+  { body: 'What was Elton John’s middle name?', test: tests[1] }
                             ])
 
-answers = Answer.create!([{ body: 'Michelangelo', question_id: questions[0].id },
-                          { body: 'Leonardo da Vinchi', question_id: questions[0].id },
-                          { body: 'Giotto', correct: true, question_id: questions[0].id },
-                          { body: 'The Horror', question_id: questions[1].id },
-                          { body: 'The Ghost', question_id: questions[1].id },
-                          { body: 'Giotto', correct: true, question_id: questions[1].id },
-                          { body: 'Hector', question_id: questions[2].id },
-                          { body: 'Herman', question_id: questions[2].id },
-                          { body: 'Hercules', correct: true, question_id: questions[2].id }])
+answers = Answer.create!([{ body: 'Michelangelo', question: questions[0] },
+                          { body: 'Leonardo da Vinchi', question: questions[0] },
+                          { body: 'Giotto', correct: true, question: questions[0] },
+                          { body: 'The Horror', question: questions[1] },
+                          { body: 'The Ghost', question: questions[1] },
+                          { body: 'Giotto', correct: true, question: questions[1] },
+                          { body: 'Hector', question: questions[2] },
+                          { body: 'Herman', question: questions[2] },
+                          { body: 'Hercules', correct: true, question: questions[2] }])
 
-users = User.create!([{ name: 'Veronika' }, { name: 'Victoria'} ])
-
-tests_users = TestsUser.create!([{ test_id: tests[0].id, user_id: users[0].id },
-                                 { test_id: tests[1].id, user_id: users[1].id },
-                                 { test_id: tests[0].id, user_id: users[1].id }])
-
+tests_users = TestsUser.create!([{ test: tests[0], user: users[0] },
+                                 { test: tests[1], user: users[1] },
+                                 { test: tests[0], user: users[1] }])
