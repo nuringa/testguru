@@ -11,7 +11,11 @@ class Test < ApplicationRecord
   scope :easy_level, -> { where(level: 0..1) }
   scope :medium_level, -> { where(level: 2..4) }
   scope :advanced_level, -> { where(level: 5..Float::INFINITY) }
-  scope :from_category, lambda { |name|
-    joins(:category).where(categories: { name: name }).order(title: :desc).pluck
-  }
+  scope :from_category, (lambda do |name|
+    joins(:category).where(categories: { name: name }).order(title: :desc)
+  end)
+
+  def self.title_from_category(name)
+    from_category(name).pluck(:title)
+  end
 end
