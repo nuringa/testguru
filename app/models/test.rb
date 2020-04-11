@@ -5,9 +5,17 @@ class Test < ApplicationRecord
   has_many :tests_users, dependent: :delete_all
   has_many :users, through: :tests_users
 
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.from_category(category_name)
-    Test.joins(:category)
-        .where(categories: { name: category_name }).order(title: :desc).pluck(:title)
+  scope :easy_level, -> { where(level: 0..1) }
+  scope :medium_level, -> { where(level: 2..4) }
+  scope :advanced_level, -> { where(level: 5..Float::INFINITY) }
+  scope :from_category, (lambda do |name|
+    joins(:category).where(categories: { name: name }).order(title: :desc)
+  end)
+
+  def self.title_from_category(name)
+    from_category(name).pluck(:title)
   end
 end
