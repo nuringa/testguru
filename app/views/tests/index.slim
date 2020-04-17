@@ -1,0 +1,11 @@
+h1 All tests
+
+table
+  tr
+    td id
+    td title
+
+  -@tests.each do |test|
+    tr
+      td= test.id
+      td= link_to test.title, test_questions_path(test.id)
