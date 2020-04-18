@@ -1,0 +1,7 @@
+tr
+  td= test.id
+  td= test.title
+  td= test.level
+  td= link_to 'View', test_path(test)
+  td= link_to 'Edit', edit_test_path(test)
+  td= link_to 'Delete', test_path(test), data: {:confirm => 'Are you sure?'}, method: :delete

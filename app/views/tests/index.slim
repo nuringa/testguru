@@ -2,10 +2,12 @@ h1 All tests
 
 table
   tr
-    td id
-    td title
+    th id
+    th title
+    th level
+    th colspan="3" actions
 
-  -@tests.each do |test|
-    tr
-      td= test.id
-      td= link_to test.title, test_questions_path(test.id)
+  = render @tests
+
+br
+= link_to 'Create a test', new_test_path
