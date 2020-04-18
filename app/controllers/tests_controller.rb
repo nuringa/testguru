@@ -10,10 +10,10 @@ class TestsController < ApplicationController
   end
 
   def show
+    @questions = @test.questions
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @test = Test.new(test_params)
@@ -33,11 +33,7 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    if @test.destroy
-      redirect_to tests_path
-    else
-
-    end
+    redirect_to tests_path if @test.destroy
   end
 
   private
