@@ -1,0 +1,12 @@
+= form_for @test do |f|
+  p
+    = f.label :title
+    = f.text_field :title
+  p
+    = f.label :level
+    = f.number_field :level
+  p
+    = f.label "Category"
+    = f.collection_select :category_id, Category.all, :id, :name, prompt: true
+  p
+    = f.submit
