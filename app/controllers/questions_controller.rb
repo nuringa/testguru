@@ -10,9 +10,7 @@ class QuestionsController < ApplicationController
     @question = Question.new
   end
 
-  def edit
-    @test = Question.find(params[:id]).test
-  end
+  def edit; end
 
   def create
     @question = @test.questions.build(question_params)
@@ -51,6 +49,6 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 end

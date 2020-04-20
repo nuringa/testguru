@@ -1,13 +1,7 @@
-h1= question_header
+h1= question_header(@question)
 
 = render 'shared/errors', resource: @question
 
-/ не получилось сделать общий partial формы из за shallow и nested -
-/ нужны разные аргументы для формирования пути [parent, child] для new, и только [child] для edit
-/ не смогла до конца разобраться с этим паззлом. Можно по первому варианту запускать оба аргумента
-/(один будет nil для edit) но из за хелпера понадобился объект теста в редактировании и получился конфликт
-= form_for @question do |f|
-  p= f.text_area :body
-  = f.submit
+= render 'form'
 
 = link_to 'Back', test_path(@question.test)
