@@ -10,6 +10,8 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers_count
-    errors.add(:title, 'Too many Answers') if question.answers.count >= MAX_ANSWERS
+    if question.answers.present?
+      errors.add(:title, 'Too many Answers') if question.answers.count >= MAX_ANSWERS
+    end
   end
 end
