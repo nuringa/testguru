@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_PER_CENT = 85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -16,6 +18,18 @@ class TestPassage < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def correct_per_cent
+    (correct_questions.to_f / test.questions.count * 100).round
+  end
+
+  def successful?
+    correct_per_cent >= SUCCESS_PER_CENT
+  end
+
+  def current_question_index
+    test.questions.pluck(:id).sort.index(current_question.id) + 1
   end
 
   private

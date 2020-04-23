@@ -1,1 +1,12 @@
 h1= "#{@test_passage.test.title} Test was Completed!"
+
+b= "Your success rate is: #{@test_passage.correct_per_cent} %"
+
+- if @test_passage.successful?
+  p.test-success
+    = 'Congratulations! You successfully passed the test.'
+- else
+  p.test-failure
+    = 'You failed the test. Please, try again'
+
+= link_to 'Back', tests_path
