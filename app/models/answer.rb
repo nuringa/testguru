@@ -5,11 +5,13 @@ class Answer < ApplicationRecord
 
   validate :validate_answers_count, on: :create
 
-  scope :correct_answers, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
 
   def validate_answers_count
-    errors.add(:title, 'Too many Answers') if question.answers.count >= MAX_ANSWERS
+    if question.answers.present?
+      errors.add(:title, 'Too many Answers') if question.answers.count >= MAX_ANSWERS
+    end
   end
 end

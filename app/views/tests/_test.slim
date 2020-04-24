@@ -6,3 +6,4 @@ tr
   td= link_to 'View', test_path(test)
   td= link_to 'Edit', edit_test_path(test)
   td= link_to 'Delete', test_path(test), data: {:confirm => 'Are you sure?'}, method: :delete
+  td= button_to 'Start', start_test_path(test)
