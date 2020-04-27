@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
+      flash[:notice] = 'You have logged in'
       redirect_back_or(tests_path)
     else
       flash.now[:alert] = 'Verify you Email and Password please'
@@ -17,6 +18,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path, notice: 'You logged out'
+    redirect_to login_path, notice: 'You have logged out'
   end
 end
