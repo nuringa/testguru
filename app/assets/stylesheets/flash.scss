@@ -3,7 +3,10 @@
   padding: 10px;
   border-radius: 5px;
 }
+  .alert {
+    border-color: #ef2727;
+  }
 
-.flash.alert {
-  border-color: #ef2727;
-}
+  .notice {
+    border-color: springgreen;
+  }

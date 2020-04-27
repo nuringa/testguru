@@ -3,12 +3,11 @@ class ApplicationController < ActionController::Base
   helper_method :current_user,
                 :logged_in?
 
-
   private
 
   def authenticate_user!
     unless current_user
-      cookies[:request_path] = request.path
+      session[:forwarding_url] = request.original_url if request.get?
       redirect_to login_path, alert: 'Verify your Email and Password, please'
     end
 
@@ -21,5 +20,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def redirect_back_or(default)
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
   end
 end
