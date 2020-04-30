@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
-      session[:forwarding_url] = request.original_url if request.get?
+      cookies[:redirect_path] = request.path if request.get?
       redirect_to login_path, alert: 'Verify your Email and Password, please'
     end
 
@@ -25,7 +25,6 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_back_or(default)
-    redirect_to(session[:forwarding_url] || default)
-    session.delete(:forwarding_url)
+    redirect_to(cookies.delete(:redirect_path) || default)
   end
 end
