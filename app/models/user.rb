@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :author_tests, foreign_key: :author_id, class_name: 'Test', dependent: :destroy
 
   validates :email, presence: true, uniqueness: true, format: { with: EMAIL }
+  validates :first_name, presence: true
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test: test)
