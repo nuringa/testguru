@@ -1,5 +1,4 @@
-= form_for @test do |f|
-  = display_flash
+= form_for [:admin, @test] do |f|
 
   p
     = f.label :title
