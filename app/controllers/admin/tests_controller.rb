@@ -17,7 +17,8 @@ class Admin::TestsController < Admin::BaseController
   def edit; end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.author_tests.build(test_params)
+
     if @test.save
       redirect_to [:admin, @test], notice: 'Test was successfully created'
     else
@@ -41,10 +42,6 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def find_user
-    @user = User.first
   end
 
   def test_params
