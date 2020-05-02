@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      test: Тест
+
+    attributes:
+      test:
+        title: Название
+        level: Уровень
+        category: Категория
+
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: должна быть создана
+            title:
+              blank: не может быть пустым
+  header: ""
