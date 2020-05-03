@@ -2,6 +2,8 @@ en:
   activerecord:
     models:
       test: Test
+      question: Вопрос
+      answer: Ответ
 
     attributes:
       test:
@@ -16,4 +18,4 @@ en:
             category:
               required: is required
               title:
-                blank: ca't be blank
+                blank: can't be blank

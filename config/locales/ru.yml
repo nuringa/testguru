@@ -5,6 +5,7 @@ ru:
     view: Просмотреть
     edit: Редактировать
     delete: Удалить
+    message: Вы уверены?
     back: Назад
 
   helpers:
@@ -26,7 +27,7 @@ ru:
         many: Обнаружено %{count} ошибок
         other:  Обнаружено %{count} ошибки
     nav:
-      welcome: Добро пожаловать,
+      welcome: 'Добро пожаловать, '
       log_in: Войти
       log_out: Выйти
       sign_up: Зарегистрироваться
@@ -66,6 +67,8 @@ ru:
         header: Новый Тест
       create:
         success: Тест успешно создан
+      edit:
+        header: Редактировать Тест
       update:
         success: Тест успешно обновлен
       destroy:
@@ -73,6 +76,12 @@ ru:
     questions:
       show:
         answer_create: Создать ответ
+        header_answers: Ответы
+    answers:
+      show:
+        header: Ответ
+        answer: "Ответ: "
+        correct: "Правильный: "
 
   users:
     sessions:

@@ -4,4 +4,4 @@ tr
   td= test.questions.count
   td= link_to t('links.view'), admin_test_path(test)
   td= link_to t('links.edit'), edit_admin_test_path(test)
-  td= link_to t('links.delete'), admin_test_path(test), data: {:confirm => 'Are you sure?'}, method: :delete
+  td= link_to t('links.delete'), admin_test_path(test), data: {:confirm => t('links.message')}, method: :delete

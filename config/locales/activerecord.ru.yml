@@ -2,6 +2,8 @@ ru:
   activerecord:
     models:
       test: Тест
+      question: Вопрос
+      answer: Ответ
 
     attributes:
       test:

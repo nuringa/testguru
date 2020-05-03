@@ -5,6 +5,7 @@ en:
     view: View
     edit: Edit
     delete: Delete
+    message: Are you sure?
     back: Back
 
   helpers:
@@ -24,7 +25,7 @@ en:
         one: '%{count} error detected'
         other: '%{count} errors detected'
     nav:
-      welcome: Welcome, %{email}
+      welcome: 'Welcome, %{email} '
       log_in: Log in
       log_out: Log out
       sign_up: Register
@@ -64,6 +65,8 @@ en:
         header: Новый Тест
       create:
         success: Test was successfully created
+      edit:
+        header: Edit Test
       update:
         success: Test was successfully updated
       destroy:
@@ -71,6 +74,12 @@ en:
     questions:
       show:
         answer_create: Create an answer
+        header_answers: Answers
+    answers:
+      show:
+        header: Answer
+        answer: "Answer: "
+        correct: "Correct: "
 
   users:
     sessions:

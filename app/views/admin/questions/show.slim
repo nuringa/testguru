@@ -2,7 +2,7 @@ h3= "Question #{@question.id}"
 
 p= @question.body
 
-h3 Answers
+h3 = t('.header_answers')
 
 = link_to t('.answer_create'), new_admin_question_answer_path(@question)
 ol= render @question.answers

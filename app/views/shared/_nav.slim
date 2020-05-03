@@ -4,7 +4,9 @@ div
   - if signed_in?
     = link_to t('.log_out'), destroy_user_session_path, class: 'nav-right nav-link', method: :delete
     span.nav-right
-      = "#{t('.welcome')} #{current_user.email}"
+      = t('.welcome')
+      b[class="user-email"] = current_user.email
+
   - else
     div.nav-right
       = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link'

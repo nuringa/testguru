@@ -3,4 +3,4 @@ tr
   td= question.body
   td= link_to t('links.view'), admin_question_path(question)
   td= link_to t('links.edit'), edit_admin_question_path(question)
-  td= link_to t('links.delete'), admin_question_path(question), data: {:confirm => 'Are you sure?'}, method: :delete
+  td= link_to t('links.delete'), admin_question_path(question), data: {:confirm => t('links.message')}, method: :delete
