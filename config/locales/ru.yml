@@ -9,10 +9,12 @@ ru:
     back: Назад
 
   helpers:
+    select:
+      prompt: 'Выберите: '
     submit:
-      test:
-        create: Создать Тест
-        update: Обновить Тест
+        create: Создать %{model}
+        submit: Сохранить %{model}
+        update: Сохранить %{model}
     label:
       test:
         title: Название

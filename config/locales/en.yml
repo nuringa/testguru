@@ -9,10 +9,12 @@ en:
     back: Back
 
   helpers:
+    select:
+      prompt: 'Please select: '
     submit:
-      test:
-        create: Create Test
-        update: Update Test
+      create: Create %{model}
+      submit: Create %{model}
+      update: Create %{model}
     label:
       test:
         title: Title
