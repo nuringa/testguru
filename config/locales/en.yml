@@ -1,6 +1,12 @@
 en:
   hello: Hello world
 
+  links:
+    view: View
+    edit: Edit
+    delete: Delete
+    back: Back
+
   helpers:
     submit:
       test:
@@ -17,10 +23,22 @@ en:
       header:
         one: '%{count} error detected'
         other: '%{count} errors detected'
+    nav:
+      welcome: Welcome, %{email}
+      log_in: Log in
+      log_out: Log out
+      sign_up: Register
+    admin_nav:
+      title: TestGuru Admin Panel
+      welcome: Welcome,
+      log_out: Log out
 
   tests:
     index:
       header: All Tests
+      question_count: Questions
+      actions: Actions
+    start: Start test
 
   test_passages:
     result:
@@ -30,8 +48,34 @@ en:
     tests:
       index:
         header: All Tests
+        title: Title
+        level: Level
+        question_count: Question count
+        actions: Actions
+        test_create: Create a test
+      show:
+        header: Test '%{title}' level %{level}
+        questions_header: "Test questions:"
+        question_id: ID
+        question_body: Body
+        question_actions: Actions
+        question_create: Create a question
+      new:
+        header: Новый Тест
       create:
         success: Test was successfully created
+      update:
+        success: Test was successfully updated
+      destroy:
+        destroyed: Test was destroyed
+    questions:
+      show:
+        answer_create: Create an answer
+
+  users:
+    sessions:
+      create:
+        wellcome: Welcome, %{name}
 
   tests_mailer:
     completed_test:

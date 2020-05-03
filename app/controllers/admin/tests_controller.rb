@@ -28,14 +28,14 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to [:admin, @test], notice: 'Test was successfully updated'
+      redirect_to [:admin, @test], notice: t('.success')
     else
       render :edit
     end
   end
 
   def destroy
-    redirect_to admin_tests_path, alert: 'Test was destroyed' if @test.destroy
+    redirect_to admin_tests_path, alert: t('.destroyed')
   end
 
   private

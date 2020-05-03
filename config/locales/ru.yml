@@ -1,6 +1,12 @@
 ru:
   hello: Привет мир
 
+  links:
+    view: Просмотреть
+    edit: Редактировать
+    delete: Удалить
+    back: Назад
+
   helpers:
     submit:
       test:
@@ -19,10 +25,22 @@ ru:
         few: 'Обнаружено %{count} ошибки'
         many: Обнаружено %{count} ошибок
         other:  Обнаружено %{count} ошибки
+    nav:
+      welcome: Добро пожаловать,
+      log_in: Войти
+      log_out: Выйти
+      sign_up: Зарегистрироваться
+    admin_nav:
+      title: TestGuru Панель Администратора
+      welcome: Добро пожаловать,
+      log_out: Выйти
 
   tests:
     index:
       header: Доступные тесты
+      question_count: Кол. вопросов
+      actions: Действия
+    start: Начать тест
 
   test_passages:
     result:
@@ -32,8 +50,34 @@ ru:
     tests:
       index:
         header: Доступные тесты
+        title: Название
+        level: Уровень
+        question_count: Кол. вопросов
+        actions: Действия
+        test_create: Создать тест
+      show:
+        header: Тест '%{title}' уровень %{level}
+        questions_header: "Вопросы Теста:"
+        question_id: ID
+        question_body: Тело вопроса
+        question_actions: Действия
+        question_create: Создать вопрос
+      new:
+        header: Новый Тест
       create:
         success: Тест успешно создан
+      update:
+        success: Тест успешно обновлен
+      destroy:
+        destroyed: Тест успешно удален
+    questions:
+      show:
+        answer_create: Создать ответ
+
+  users:
+    sessions:
+      create:
+        wellcome: Добро пожаловать, %{name}
 
   tests_mailer:
     completed_test:
