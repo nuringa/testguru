@@ -10,7 +10,7 @@ ru:
 
   helpers:
     select:
-      prompt: 'Выберите: '
+      prompt: 'Выберите категорию: '
     submit:
         create: Создать %{model}
         submit: Сохранить %{model}
