@@ -76,3 +76,6 @@ en:
       links:
         not_receive_instructions: "Didn't receive confirmation instructions?"
         forgot_password: "Forgot your password?"
+  shared:
+    nav:
+      admin_panel_link: "Admin panel"

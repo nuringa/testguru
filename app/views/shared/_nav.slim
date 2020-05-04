@@ -1,13 +1,21 @@
-div
-  = link_to 'TestGuru', root_path, class: 'nav-title'
+nav.navbar-expand-md.navbar-light.bg-light.mb-2
 
-  - if signed_in?
-    = link_to t('.log_out'), destroy_user_session_path, class: 'nav-right nav-link', method: :delete
-    span.nav-right
-      = t('.welcome')
-      b[class="user-email"] = current_user.email
+  ul.navbar-nav
+    .navbar-brand.mr-auto
+      = link_to 'TestGuru', root_path, class: 'btn btn-outline-primary ml-2'
+    - if current_user&.admin?
+      li.nav-item.mr-auto
+        = link_to t('.admin_panel_link'), admin_tests_path, class: 'nav-link'
 
-  - else
-    div.nav-right
-      = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link'
-      = link_to t('.log_in'), new_user_session_path, class: 'nav-link'
+    - if signed_in?
+      li.nav-item
+        .navbar-text
+          = t('.welcome')
+          b[class="user-email"] = current_user.email
+      li.nav-item
+        = link_to t('.log_out'), destroy_user_session_path, class: 'nav-link ml-2', method: :delete
+    - else
+      li.nav-item
+        = link_to t('.sign_up'), new_user_registration_path, class: 'nav-link'
+      li.nav-item
+        = link_to t('.log_in'), new_user_session_path, class: 'nav-link'

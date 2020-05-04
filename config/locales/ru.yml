@@ -33,6 +33,7 @@ ru:
       log_in: Войти
       log_out: Выйти
       sign_up: Зарегистрироваться
+      admin_panel_link: "Панель администратора"
     admin_nav:
       title: TestGuru Панель Администратора
       welcome: Добро пожаловать,
