@@ -1,14 +1,14 @@
-h1 Question
+h1 = t('.header')
 
 p
   = @answer.question.body
 p
   b
-    = 'Answer: '
+    = t('.answer')
   = @answer.body
 p
   b
-    = 'Correct: '
+    = t('.correct')
   = @answer.correct
 
-= link_to 'Back', admin_question_path(@answer.question)
+= link_to t('links.back'), admin_question_path(@answer.question)

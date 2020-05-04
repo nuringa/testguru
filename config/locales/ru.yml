@@ -1,2 +1,95 @@
 ru:
-  hello: "Привет мир"
+  hello: Привет мир
+
+  links:
+    view: Просмотреть
+    edit: Редактировать
+    delete: Удалить
+    message: Вы уверены?
+    back: Назад
+
+  helpers:
+    select:
+      prompt: 'Выберите категорию: '
+    submit:
+        create: Создать %{model}
+        submit: Сохранить %{model}
+        update: Сохранить %{model}
+    label:
+      test:
+        title: Название
+        level: Уровень
+        category_id: Категория
+
+  shared:
+    errors:
+      header:
+        one: 'Обнаружена %{count} ошибка'
+        few: 'Обнаружено %{count} ошибки'
+        many: Обнаружено %{count} ошибок
+        other:  Обнаружено %{count} ошибки
+    nav:
+      welcome: 'Добро пожаловать, '
+      log_in: Войти
+      log_out: Выйти
+      sign_up: Зарегистрироваться
+    admin_nav:
+      title: TestGuru Панель Администратора
+      welcome: Добро пожаловать,
+      log_out: Выйти
+
+  tests:
+    index:
+      header: Доступные тесты
+      question_count: Кол. вопросов
+      actions: Действия
+    start: Начать тест
+
+  test_passages:
+    result:
+      header: Тест %{title} был успешно завершен!
+
+  admin:
+    tests:
+      index:
+        header: Доступные тесты
+        title: Название
+        level: Уровень
+        question_count: Кол. вопросов
+        actions: Действия
+        test_create: Создать тест
+      show:
+        header: Тест '%{title}' уровень %{level}
+        questions_header: "Вопросы Теста:"
+        question_id: ID
+        question_body: Тело вопроса
+        question_actions: Действия
+        question_create: Создать вопрос
+      new:
+        header: Новый Тест
+      create:
+        success: Тест успешно создан
+      edit:
+        header: Редактировать Тест
+      update:
+        success: Тест успешно обновлен
+      destroy:
+        destroyed: Тест успешно удален
+    questions:
+      show:
+        answer_create: Создать ответ
+        header_answers: Ответы
+    answers:
+      show:
+        header: Ответ
+        answer: "Ответ: "
+        correct: "Правильный: "
+
+  users:
+    sessions:
+      create:
+        wellcome: Добро пожаловать, %{name}
+
+  tests_mailer:
+    completed_test:
+      subject: Вы успешно завершили Тест на портале TestGuru!

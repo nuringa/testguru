@@ -1,10 +1,10 @@
-h1 All tests
+h1 = t('.header')
 
 table
   tr
-    th Title
-    th Level
-    th Questions
-    th Actions
+    th = t('activerecord.attributes.test.title')
+    th = t('activerecord.attributes.test.level')
+    th = t('.question_count')
+    th = t('.actions')
 
   = render @tests

@@ -1,2 +1,93 @@
 en:
-  hello: "Hello world"
+  hello: Hello world
+
+  links:
+    view: View
+    edit: Edit
+    delete: Delete
+    message: Are you sure?
+    back: Back
+
+  helpers:
+    select:
+      prompt: 'Please select: '
+    submit:
+      create: Create %{model}
+      submit: Create %{model}
+      update: Create %{model}
+    label:
+      test:
+        title: Title
+        level: Level
+        category_id: Category
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+    nav:
+      welcome: 'Welcome, %{email} '
+      log_in: Log in
+      log_out: Log out
+      sign_up: Register
+    admin_nav:
+      title: TestGuru Admin Panel
+      welcome: Welcome,
+      log_out: Log out
+
+  tests:
+    index:
+      header: All Tests
+      question_count: Questions
+      actions: Actions
+    start: Start test
+
+  test_passages:
+    result:
+      header: Test %{title} was Completed!
+
+  admin:
+    tests:
+      index:
+        header: All Tests
+        title: Title
+        level: Level
+        question_count: Question count
+        actions: Actions
+        test_create: Create a test
+      show:
+        header: Test '%{title}' level %{level}
+        questions_header: "Test questions:"
+        question_id: ID
+        question_body: Body
+        question_actions: Actions
+        question_create: Create a question
+      new:
+        header: Новый Тест
+      create:
+        success: Test was successfully created
+      edit:
+        header: Edit Test
+      update:
+        success: Test was successfully updated
+      destroy:
+        destroyed: Test was destroyed
+    questions:
+      show:
+        answer_create: Create an answer
+        header_answers: Answers
+    answers:
+      show:
+        header: Answer
+        answer: "Answer: "
+        correct: "Correct: "
+
+  users:
+    sessions:
+      create:
+        wellcome: Welcome, %{name}
+
+  tests_mailer:
+    completed_test:
+      subject: You've just completed the TestGuru test!

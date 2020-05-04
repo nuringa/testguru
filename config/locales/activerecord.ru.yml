@@ -1,0 +1,42 @@
+ru:
+  activerecord:
+    models:
+      test: Тест
+      question: Вопрос
+      answer: Ответ
+      user: Пользователь
+
+    attributes:
+      user:
+        current_password: Текущий пароль
+        email: Адрес эл. почты
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        remeber_me: Запомнить меня
+        first_name: Имя
+        last_name: Фамилия
+      test:
+        title: Название
+        level: Уровень
+        category: Категория
+
+    errors:
+      models:
+        test:
+          attributes:
+            category:
+              required: должна быть создана
+            title:
+              blank: не может быть пустым
+  header: ""
+  devise:
+    shared:
+      links:
+        not_receive_instructions: "Не получили инструкцию по подтверждению аккаунта?"
+        forgot_password: "Забыли пароль?"
+    sessions:
+      new:
+        header: "Войди в Портал Тестов"
+    registrations:
+      edit:
+        header: "Редактировать %{name}"

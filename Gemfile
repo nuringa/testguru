@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'slim-rails'
+gem 'rails-i18n'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
