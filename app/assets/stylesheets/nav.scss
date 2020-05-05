@@ -1,7 +1,17 @@
+body {
+  height: 100%;
+}
+
 .user-email {
   border-bottom: 1px solid #3c85e0;
   color: #212529;
 }
+
 .admin-bg {
   background-color: #c0dafc;
 }
+
+#sticky-footer {
+  flex-shrink: 0;
+}
+
