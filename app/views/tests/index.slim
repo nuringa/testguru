@@ -1,10 +1,14 @@
-h1 = t('.header')
+h1
+  .title.text-info = t('.header')
 
-table
-  tr
-    th = t('activerecord.attributes.test.title')
-    th = t('activerecord.attributes.test.level')
-    th = t('.question_count')
-    th = t('.actions')
+.container
+  .table.table-hover
+    table.tests-table
+      tr
+        th = t('activerecord.attributes.test.title')
+        th = t('activerecord.attributes.test.level')
+        th = t('.question_count')
+        th = t('.actions')
+        th = ''
 
-  = render @tests
+      = render @tests

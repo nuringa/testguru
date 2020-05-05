@@ -5,3 +5,17 @@
 .test-failure {
   color: red;
 }
+
+.title {
+  text-align: center;
+}
+
+table.tests-table {
+  width: 800px;
+  text-align: center;
+  margin-top: 2rem;
+}
+  tr th {
+    background-color: rgba(136, 205, 220, 0.62);
+    color: #373b3e;
+  }
