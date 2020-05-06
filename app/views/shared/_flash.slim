@@ -1,2 +1,5 @@
-- flash.each do |key, message|
-  = content_tag :p, message, class: "flash #{key}"
+.container
+  - flash.each do |type, message|
+    div class=("alert #{bootstrap_class_for_flash(type)} alert-dismissable fade show flash")
+      = message
+      button.close data-dismiss="alert"  x

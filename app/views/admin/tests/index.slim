@@ -1,13 +1,15 @@
-h1 = t('.header')
+h1
+  .title.text-info = t('.header')
 
-table
-  tr
-    th = t('.title')
-    th = t('.level')
-    th = t('.question_count')
-    th colspan="3" = t('.actions')
+.container
+  .table.table-hover
+    table.tests-table
+      tr
+        th = t('.title')
+        th = t('.level')
+        th = t('.question_count')
+        th colspan="3" = t('.actions')
 
-  = render @tests
+        = render @tests
 
-br
-= link_to t('.test_create'), new_admin_test_path
+    = link_to t('.test_create'), new_admin_test_path, class: 'btn btn-info'

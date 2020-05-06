@@ -1,42 +1,17 @@
-.nav-title {
-  font-size: 2rem
+body {
+  height: 100%;
 }
 
-.nav-right {
-  float: right
-}
-
-.nav-link {
-  margin-left: 1rem
-}
-
-.nav.user-email {
+.user-email {
   border-bottom: 1px solid #3c85e0;
+  color: #212529;
 }
 
-.nav.nav-admin {
-  height: 35px;
-  padding: 15px;
-  line-height: 35px;
-  color: #ffffff;
-  background-color: #4293e6;
-  margin-bottom: 40px;
+.admin-bg {
+  background-color: #c0dafc;
 }
 
-.nav-admin.title {
-  font-size: 140%;
-  font-weight: bold;
+#sticky-footer {
+  flex-shrink: 0;
 }
 
-.nav-admin.user {
-  float: right;
-}
-
-.nav-admin.user-email {
-  text-decoration: underline;
-}
-
-.nav.nav-admin
-  a {
-  color: #ffffff;
-}
