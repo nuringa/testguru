@@ -1,10 +1,22 @@
 class TestPassagesController < ApplicationController
 
-  before_action :find_test_passage, only: %i[show update result]
+  before_action :find_test_passage, only: %i[show update result gist]
 
   def show; end
 
   def result; end
+
+  def gist
+    result = GistService.new(@test_passage.current_question).call
+
+    flash_options = if result.success?
+                      { notice: t('.success') }
+                    else
+                      { alert: t('.failure') }
+                    end
+
+    redirect_to @test_passage, flash_options
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])

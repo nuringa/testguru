@@ -49,6 +49,13 @@ ru:
   test_passages:
     result:
       header: Тест %{title} был успешно завершен!
+    gist:
+      success: "Gist успешно сохранен"
+      failure: "Во время сохранения gist произошла ошибка"
+    show:
+      next: "Дальше"
+      gist_question: "Сохранить в Gist"
+      header: "Прохождение теста '%{title}'"
 
   admin:
     tests:

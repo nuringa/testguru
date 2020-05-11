@@ -46,6 +46,13 @@ en:
   test_passages:
     result:
       header: Test %{title} was Completed!
+    gist:
+      success: "Gist was saved successfully"
+      failure: "An error occured when saving the gist"
+    show:
+      next: "Next"
+      gist_question: "Gist Question"
+      header: "Passing the '%{title}' Test"
 
   admin:
     tests:

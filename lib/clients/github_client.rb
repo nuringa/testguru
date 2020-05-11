@@ -1,6 +1,6 @@
 class GithubClient
 
-  ROOT_ENDPOINT = 'https://api.github.com'
+  ROOT_ENDPOINT = 'https://api.github.com'.freeze
   ACCESS_TOKEN = Rails.application.credentials.gist
 
   def initialize

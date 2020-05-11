@@ -1,12 +1,18 @@
-h1 = t('.header', title: @test_passage.test.title)
+.title.text-info.mt-5
+  h1 = t('.header', title: @test_passage.test.title)
 
-b= "Your success rate is: #{@test_passage.correct_per_cent} %"
+.container
+  .card.mt-5
+    .card-body
+      .card-header.bg-info = "Your success rate is: #{@test_passage.correct_per_cent} %"
 
-- if @test_passage.successful?
-  p.test-success
-    = 'Congratulations! You successfully passed the test.'
-- else
-  p.test-failure
-    = 'You failed the test. Please, try again'
+    .card-body
+      - if @test_passage.successful?
+        p.test-success
+          = 'Congratulations! You successfully passed the test.'
+      - else
+        p.test-failure
+          = 'You failed the test. Please, try again'
 
-= link_to 'Back', tests_path
+    .card-footer
+      = link_to 'Back', tests_path
