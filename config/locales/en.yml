@@ -64,6 +64,7 @@ en:
         question_count: Question count
         actions: Actions
         test_create: Create a test
+        preview_gist: "Gists Overview"
       show:
         header: Test '%{title}' level %{level}
         questions_header: "Test questions:"
@@ -90,6 +91,11 @@ en:
         header: Answer
         answer: "Answer: "
         correct: "Correct: "
+    gists:
+      index:
+        header: "Posted Gists"
+        gist_user: "Sent by"
+        gist_question: "Question"
 
   users:
     sessions:

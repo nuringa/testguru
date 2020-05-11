@@ -67,6 +67,7 @@ ru:
         question_count: Кол. вопросов
         actions: Действия
         test_create: Создать тест
+        preview_gist: "Просмотреть Gists"
       show:
         header: Тест '%{title}' уровень %{level}
         questions_header: "Вопросы Теста:"
@@ -93,6 +94,11 @@ ru:
         header: Ответ
         answer: "Ответ: "
         correct: "Правильный: "
+    gists:
+      index:
+        header: "Опубликованные Gists"
+        gist_user: "Отправил:"
+        gist_question: "Вопрос"
 
   users:
     sessions:

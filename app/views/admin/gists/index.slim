@@ -1,0 +1,14 @@
+h1
+  .title.text-info = t('.header')
+
+.container
+  .table.table-hover
+    table.tests-table
+      tr
+        th = t('.gist_user')
+        th = t('.gist_question')
+        th = ''
+
+        = render @gists
+    .mt-5
+      = link_to t('links.back'), admin_tests_path, class: 'btn btn-info'

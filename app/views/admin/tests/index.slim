@@ -11,5 +11,6 @@ h1
         th colspan="3" = t('.actions')
 
         = render @tests
-
-    = link_to t('.test_create'), new_admin_test_path, class: 'btn btn-info'
+    .mt-5
+      = link_to t('.test_create'), new_admin_test_path, class: 'btn btn-info mr-3'
+      = link_to t('.preview_gist'), admin_gists_path, class: 'btn btn-info'
