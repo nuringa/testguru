@@ -50,8 +50,9 @@ ru:
     result:
       header: Тест %{title} был успешно завершен!
     gist:
-      success: "Gist успешно сохранен"
+      success: "Gist успешно сохранен по %{link}"
       failure: "Во время сохранения gist произошла ошибка"
+      here: "ссылке"
     show:
       next: "Дальше"
       gist_question: "Сохранить в Gist"
