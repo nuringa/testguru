@@ -46,6 +46,14 @@ en:
   test_passages:
     result:
       header: Test %{title} was Completed!
+    gist:
+      success: "Gist was saved successfully "
+      failure: "An error occured when saving the gist"
+      here: "here"
+    show:
+      next: "Next"
+      gist_question: "Gist Question"
+      header: "Passing the '%{title}' Test"
 
   admin:
     tests:
@@ -56,6 +64,7 @@ en:
         question_count: Question count
         actions: Actions
         test_create: Create a test
+        preview_gist: "Gists Overview"
       show:
         header: Test '%{title}' level %{level}
         questions_header: "Test questions:"
@@ -82,6 +91,11 @@ en:
         header: Answer
         answer: "Answer: "
         correct: "Correct: "
+    gists:
+      index:
+        header: "Posted Gists"
+        gist_user: "Sent by"
+        gist_question: "Question"
 
   users:
     sessions:
@@ -91,3 +105,4 @@ en:
   tests_mailer:
     completed_test:
       subject: You've just completed the TestGuru test!
+  description: "A question about %{title} from TestGuru"

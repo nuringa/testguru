@@ -35,7 +35,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    redirect_to admin_tests_path, alert: t('.destroyed')
+    redirect_to admin_tests_path, alert: t('.destroyed') if @test.destroy
   end
 
   private
