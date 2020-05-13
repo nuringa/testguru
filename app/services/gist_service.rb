@@ -8,10 +8,10 @@ class GistService
     end
   end
 
-  def initialize(question, client: nil)
+  def initialize(question, client = default_client)
     @question = question
     @test = @question.test
-    @client = client || Octokit::Client.new(access_token: ACCESS_TOKEN)
+    @client = client
   end
 
   def call
@@ -36,5 +36,9 @@ class GistService
     content = [@question.body]
     content += @question.answers.pluck(:body)
     content.join("\n")
+  end
+
+  def default_client
+    client || Octokit::Client.new(access_token: ACCESS_TOKEN)
   end
 end
