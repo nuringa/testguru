@@ -39,6 +39,6 @@ class GistService
   end
 
   def default_client
-    client || Octokit::Client.new(access_token: ACCESS_TOKEN)
+    Octokit::Client.new(access_token: ACCESS_TOKEN)
   end
 end
