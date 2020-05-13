@@ -1,4 +1,4 @@
 tr
   td= gist.user.email
   td= question_link(gist)
-  td= link_to t('links.view'), gist.url, target: :blank
+  td= gist_link_with_hash(gist.url)
