@@ -16,6 +16,7 @@ gem 'faraday'
 gem 'octokit', '~> 4.0'
 gem 'rails-i18n'
 gem 'slim-rails'
+gem 'octicons_helper'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
