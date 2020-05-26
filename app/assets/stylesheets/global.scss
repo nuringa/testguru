@@ -1,0 +1,17 @@
+.hide {
+  display: none !important;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.focus-warning:focus {
+  border-color: #FF0000  !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+}
+
+.focus-success:focus {
+  border-color: #28a645 !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(40, 166, 69) !important;
+}
