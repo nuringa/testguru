@@ -13,4 +13,5 @@ table
 br
 = link_to t('.question_create'), new_admin_test_question_path(@test)
 
-p= link_to t('links.back'), admin_tests_path
+p = link_to t('links.edit'), edit_admin_test_path(@test)
+p = link_to t('links.back'), admin_tests_path

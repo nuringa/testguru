@@ -9,17 +9,17 @@ document.addEventListener('turbolinks:load', function() {
 
   const errors = document.querySelector('.resource-errors')
 
-  if (errors) {
+  if (errors && controls.length) {
     const resourceId = errors.dataset.resourceId
     formInlineHandler(resourceId)
   }
 })
 
 function formInlineLinkHandler(event) {
-  event.preventDefault()
+    event.preventDefault()
 
-  const testId = this.dataset.testId
-  formInlineHandler(testId)
+    const testId = this.dataset.testId
+    formInlineHandler(testId)
 }
 
 function formInlineHandler(testId) {
