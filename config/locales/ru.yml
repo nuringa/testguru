@@ -85,6 +85,8 @@ ru:
         success: Тест успешно обновлен
       destroy:
         destroyed: Тест успешно удален
+      form_inline:
+        submit: "ОК"
     questions:
       show:
         answer_create: Создать ответ

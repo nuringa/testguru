@@ -82,6 +82,8 @@ en:
         success: Test was successfully updated
       destroy:
         destroyed: Test was destroyed
+      form_inline:
+        submit: "ОК"
     questions:
       show:
         answer_create: Create an answer
