@@ -1,5 +1,10 @@
 .title.text-info
   h1 = t('.header', title: @test_passage.test.title)
+
+.progress
+  = content_tag :div, "#{@test_passage.correct_per_cent} %", class: 'progress-bar progress-bar-danger', \
+    role: 'progressbar', data: { width: @test_passage.correct_per_cent }
+
 .container
   .card
     .card-body
