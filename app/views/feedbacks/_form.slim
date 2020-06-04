@@ -1,0 +1,25 @@
+.container
+  .row.justify-content-center
+    .col-auto.mt-5
+      div.card.border-info
+        div.card-body
+          div.card-title
+            h4 = Feedback
+
+          = form_with model: [@feedback], url: feedback_path, local: true do |f|
+            = render 'shared/errors', resource: @feedback
+
+            .field
+              = f.label :name
+              br
+              = f.text_field :name, size: 40
+            .field
+              = f.label :subject
+              br
+              = f.text_field :subject, size: 40
+            .field
+              = f.label :message
+              br
+              = f.text_area :message, cols: 40
+            .actions
+              = f.submit
