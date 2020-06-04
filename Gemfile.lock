@@ -58,16 +58,16 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.7.3)
+    autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap (4.0.0)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
+    bootstrap (4.5.0)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.1)
     concurrent-ruby (1.1.6)
@@ -128,7 +128,7 @@ GEM
       sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
     pg (1.2.3)
-    popper_js (1.14.5)
+    popper_js (1.16.0)
     public_suffix (4.0.3)
     puma (4.3.5)
       nio4r (~> 2.0)
@@ -174,11 +174,6 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     ruby_dep (1.5.0)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.2.1)
@@ -240,7 +235,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  bootstrap
+  bootstrap (~> 4.5.0)
   byebug
   devise
   faraday
@@ -258,6 +253,8 @@ DEPENDENCIES
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets (~> 4)
+  sprockets-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

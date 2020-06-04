@@ -1,6 +1,9 @@
-h1 = t('.header')
+.container
+  .row.justify-content-start
+    .col-auto
+      h1 = t('.header')
 
-= render 'shared/errors', resource: @test
-= render 'form'
+      = render 'shared/errors', resource: @test
+      = render 'form'
 
-= link_to t('links.back'), admin_tests_path
+      = link_to t('links.back'), admin_tests_path

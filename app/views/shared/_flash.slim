@@ -1,5 +1,5 @@
 .container
   - flash.each do |type, message|
-    div class=("alert alert-#{bootstrap_class_for_flash(type)} alert-dismissable fade show flash")
+    div class=("alert #{bootstrap_class_for_flash(type)} alert-dismissible")
+      a.close aria-label="close" data-dismiss="alert" href="#"  &times;
       == message
-      button.close data-dismiss="alert"  x

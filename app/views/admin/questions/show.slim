@@ -1,10 +1,13 @@
-h3= "Question #{@question.id}"
+.container
+  .row.justify-content-start
+    .col-auto
+      h3= "Question #{@question.id}"
 
-p= @question.body
+      p= @question.body
 
-h3 = t('.header_answers')
+      h3 = t('.header_answers')
 
-= link_to t('.answer_create'), new_admin_question_answer_path(@question)
-ol= render @question.answers
+      = link_to t('.answer_create'), new_admin_question_answer_path(@question)
+      ol= render @question.answers
 
-= link_to t('links.back'), admin_test_path(@question.test)
+      = link_to t('links.back'), admin_test_path(@question.test)

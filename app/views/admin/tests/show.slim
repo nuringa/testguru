@@ -1,17 +1,18 @@
-h3 = t('.header', title: @test.title, level: @test.level)
+.container
+  .row.justify-content-start
+    .col-auto
+      h3 = t('.header', title: @test.title, level: @test.level)
+      h4 = t('.questions_header')
 
-h4 = t('.questions_header')
+      table.tests-table
+        tr
+          th = t('.question_id')
+          th = t('.question_body')
+          th colspan="3" = t('.question_actions')
 
-table
-  tr
-    th = t('.question_id')
-    th = t('.question_body')
-    th colspan="3" = t('.question_actions')
+        = render @questions
 
-  = render @questions
-
-br
-= link_to t('.question_create'), new_admin_test_question_path(@test)
-
-p = link_to t('links.edit'), edit_admin_test_path(@test)
-p = link_to t('links.back'), admin_tests_path
+      br
+      = link_to t('.question_create'), new_admin_test_question_path(@test), class: 'links'
+      = link_to t('links.edit'), edit_admin_test_path(@test), class: 'links'
+      = link_to t('links.back'), admin_tests_path, class: 'links'

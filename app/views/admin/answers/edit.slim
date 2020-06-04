@@ -1,6 +1,9 @@
-h1 Edit Answer
+.container
+  .row.justify-content-start
+    .col-auto
+      h1 Edit Answer
 
-p= @answer.question.body
+      p= @answer.question.body
 
-= render 'form'
-= link_to t('links.back'), admin_question_path(@answer.question)
+      = render 'form'
+      = link_to t('links.back'), admin_question_path(@answer.question)

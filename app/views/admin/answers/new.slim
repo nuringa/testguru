@@ -1,6 +1,9 @@
-h1 New Answer
+.container
+  .row.justify-content-start
+    .col-auto
+      h1 New Answer
 
-p= @question.body
+      p= @question.body
 
-= render 'form'
-= link_to t('links.back'), admin_question_path(@question)
+      = render 'form'
+      = link_to t('links.back'), admin_question_path(@question)

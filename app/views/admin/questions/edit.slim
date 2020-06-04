@@ -1,7 +1,10 @@
-h1= question_header(@question)
+.container
+  .row.justify-content-start
+    .col-auto
+      h1= question_header(@question)
 
-= render 'shared/errors', resource: @question
+      = render 'shared/errors', resource: @question
 
-= render 'form'
+      = render 'form'
 
-= link_to link_to t('links.back'), admin_test_path(@question.test)
+      = link_to link_to t('links.back'), admin_test_path(@question.test)

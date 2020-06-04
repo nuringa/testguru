@@ -1,6 +1,6 @@
 li= answer.body
 br
-= link_to t('links.view'), admin_answer_path(answer)
-= link_to t('links.edit'), edit_admin_answer_path(answer)
-= link_to t('links.delete'), admin_answer_path(answer), method: :delete,
+= link_to t('links.view'), admin_answer_path(answer), class: 'links'
+= link_to t('links.edit'), edit_admin_answer_path(answer), class: 'links'
+= link_to t('links.delete'), admin_answer_path(answer), method: :delete, class: 'links',
         data: { confirm: t('links.message') }
