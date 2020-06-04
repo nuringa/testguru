@@ -8,7 +8,7 @@ class FeedbacksMailer < ApplicationMailer
     mail from: @email,
          cc: @email,
          to:  Rails.application.credentials.default_email,
-         subject: "TestGuru feedback: #{@subject}",
+         subject: @subject,
          body: @message
   end
 end

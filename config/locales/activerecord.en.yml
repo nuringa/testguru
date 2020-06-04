@@ -2,8 +2,9 @@ en:
   activerecord:
     models:
       test: Test
-      question: Вопрос
-      answer: Ответ
+      question: Question
+      answer: Answer
+      feedback: Feedback
 
     attributes:
       user:
@@ -18,6 +19,10 @@ en:
         title: Title
         level: Level
         category: Category
+      feedback:
+        name: Name
+        subject: Subject
+        message: Message
 
     errors:
       models:

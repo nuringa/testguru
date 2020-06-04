@@ -44,6 +44,9 @@ ru:
       header: Доступные тесты
       question_count: Кол. вопросов
       actions: Действия
+      tests:
+        feedback:
+          link: "Оставьте Отзыв"
     start: Начать тест
 
   test_passages:
@@ -111,3 +114,10 @@ ru:
     completed_test:
       subject: Вы успешно завершили Тест на портале TestGuru!
   description: "Вопрос '%{title}' с портала TestGuru"
+  feedbacks:
+    create:
+      success: "Спасибо, Вы успешно отправили отзыв."
+    form:
+      feedbacks:
+        submit: "Отправить Отзыв"
+

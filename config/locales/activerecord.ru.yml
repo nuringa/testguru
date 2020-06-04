@@ -5,6 +5,7 @@ ru:
       question: Вопрос
       answer: Ответ
       user: Пользователь
+      feedback: Отзыв
 
     attributes:
       user:
@@ -19,6 +20,10 @@ ru:
         title: Название
         level: Уровень
         category: Категория
+      feedback:
+        name: Имя
+        subject: Тема
+        message: Сообщение
 
     errors:
       models:

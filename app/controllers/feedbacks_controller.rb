@@ -11,7 +11,7 @@ class FeedbacksController < ApplicationController
     if @feedback.valid?
       FeedbacksMailer.send_feedback(@feedback).deliver_now
 
-      flash[:warning] = 'УРа'
+      flash[:warning] = t('.success')
       redirect_to tests_path
     else
       render :new
@@ -23,7 +23,4 @@ class FeedbacksController < ApplicationController
   def feedback_params
     params.require(:feedback).permit(:name, :email, :subject, :message)
   end
-
-
-
 end
