@@ -44,9 +44,6 @@ ru:
       header: Доступные тесты
       question_count: Кол. вопросов
       actions: Действия
-      tests:
-        feedback:
-          link: "Оставьте Отзыв"
     start: Начать тест
 
   test_passages:
@@ -120,4 +117,6 @@ ru:
     form:
       feedbacks:
         submit: "Отправить Отзыв"
+  application:
+    welcome_back: "Приходите к нам еще!"
 

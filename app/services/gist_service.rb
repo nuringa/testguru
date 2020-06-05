@@ -1,6 +1,10 @@
 class GistService
+  if Rails.env.production?
+    ACCESS_TOKEN = ENV['GIST']
+  else
+    ACCESS_TOKEN = Rails.application.credentials.gist
+  end
 
-  ACCESS_TOKEN = Rails.application.credentials.gist
 
   Result = Struct.new(:html_url) do
     def success?

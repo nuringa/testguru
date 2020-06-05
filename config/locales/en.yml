@@ -41,9 +41,6 @@ en:
       header: All Tests
       question_count: Questions
       actions: Actions
-      tests:
-        feedback:
-          link: "Leave a Feedback"
     start: Start test
 
   test_passages:
@@ -117,3 +114,5 @@ en:
     form:
       feedbacks:
         submit: "Send Feedback"
+  application:
+    welcome_back: "Come back soon!"
