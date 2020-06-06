@@ -1,5 +1,7 @@
 nav
   .navbar.fixed-bottom.navbar-light.bg-light
+    = link_to 'Write to Us', new_feedback_path,
+            class: 'btn btn-outline-secondary link-feedback'
     .container.text-center
       p
         small #{current_year}, Ekaterina Egorova - #{link_to 'Testguru app', github_url('nuringa', 'testguru')}

@@ -111,3 +111,12 @@ ru:
     completed_test:
       subject: Вы успешно завершили Тест на портале TestGuru!
   description: "Вопрос '%{title}' с портала TestGuru"
+  feedbacks:
+    create:
+      success: "Спасибо, Вы успешно отправили отзыв."
+    form:
+      feedbacks:
+        submit: "Отправить Отзыв"
+  application:
+    welcome_back: "Приходите к нам еще!"
+

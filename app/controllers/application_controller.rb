@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
     user.admin? ? admin_tests_path : (stored_location_for(user) || root_path)
   end
 
+  def after_sign_out_path_for(user)
+    flash[:success] = t('.welcome_back')
+    new_user_session_path
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end

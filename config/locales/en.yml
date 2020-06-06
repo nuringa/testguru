@@ -108,3 +108,11 @@ en:
     completed_test:
       subject: You've just completed the TestGuru test!
   description: "A question about %{title} from TestGuru"
+  feedbacks:
+    create:
+      success: "Thank you! You've sent a feedback."
+    form:
+      feedbacks:
+        submit: "Send Feedback"
+  application:
+    welcome_back: "Come back soon!"

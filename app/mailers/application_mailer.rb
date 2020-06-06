@@ -1,4 +1,10 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: %{"TestGuru <guru@testguru.com"}
+
+  if Rails.env.production?
+    default from: ENV['FROM_DEFAULT']
+  else
+    default from: Rails.application.credentials.default_email
+  end
+
   layout 'mailer'
 end

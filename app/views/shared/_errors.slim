@@ -1,5 +1,6 @@
 - if resource.present? && resource.errors.any?
-  = content_tag :div, class: 'resource-errors', data: { resource_id: resource.id }
+  - resource_id = resource.methods.include?(:id) ? resource.id : 0
+  = content_tag :div, class: 'resource-errors', data: { resource_id: resource_id }
     h2 = t('.header', count: resource.errors.count)
 
     div.ul

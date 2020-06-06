@@ -2,15 +2,17 @@ h1
   .title.text-info = t('.header')
 
 .container
-  .table.table-hover
-    table.tests-table
-      tr
-        th.sort-by-title.cursor-pointer
-          = t('activerecord.attributes.test.title')
-          = octicon 'arrow-up', class: 'text-success hide'
-          = octicon 'arrow-down', class: 'text-success hide'
-        th = t('activerecord.attributes.test.level')
-        th = t('.question_count')
-        th = ''
+  .row.justify-content-center
+    .col-auto
+      .table.table-hover
+        table.tests-table
+          tr
+            th.sort-by-title.cursor-pointer
+              = t('activerecord.attributes.test.title')
+              = octicon 'arrow-up', class: 'text-success hide'
+              = octicon 'arrow-down', class: 'text-success hide'
+            th = t('activerecord.attributes.test.level')
+            th = t('.question_count')
+            th = ''
 
-      = render @tests
+          = render @tests

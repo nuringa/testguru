@@ -10,6 +10,10 @@ module ApplicationHelper
       'alert-warning'
     when 'notice'
       'alert-info'
+    when 'danger'
+      'alert-danger'
+    when 'warning'
+      'alert-warning'
     else
       type.to_s
     end
