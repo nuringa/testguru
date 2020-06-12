@@ -65,6 +65,7 @@ en:
         actions: Actions
         test_create: Create a test
         preview_gist: "Gists Overview"
+        preview_badges: "View badges"
       show:
         header: Test '%{title}' level %{level}
         questions_header: "Test questions:"
@@ -98,6 +99,15 @@ en:
         header: "Posted Gists"
         gist_user: "Sent by"
         gist_question: "Question"
+    badges:
+      new:
+        header: "Create a new Badge"
+      index:
+        header: "Badges"
+        badge_create: "Create a badge"
+        name: "Title"
+        url: "Picture"
+        actions: "Actions"
 
   users:
     sessions:

@@ -1,0 +1,22 @@
+.container
+  .row.justify-content-start
+    .col-auto
+      h1
+        .title.text-info = t('.header')
+
+      =render 'shared/errors', resource: @test
+
+      .container
+        .table.table-hover
+          table.tests-table
+            tr
+              th = t('.name')
+              th = t('.url')
+              th = t('.rule_name')
+              th = t('.rule_value')
+              th colspan="3" = t('.actions')
+
+              = render @badges
+          .mt-5
+            = link_to t('.badge_create'), new_admin_badge_path, class: 'btn btn-info mr-3'
+            = link_to t('links.back'), admin_tests_path, class: 'btn btn-info'

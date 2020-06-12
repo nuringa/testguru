@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :author_tests, foreign_key: :author_id, class_name: 'Test', dependent: :destroy
   has_many :gists, dependent: :destroy
+  has_many :badges_users, dependent: :delete_all
+  has_many :badges, through: :badges_users
 
   validates :first_name, presence: true
 

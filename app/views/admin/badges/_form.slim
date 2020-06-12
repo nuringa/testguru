@@ -1,0 +1,17 @@
+= form_for [:admin, @badge] do |f|
+
+  p
+    = f.label :name
+    = f.text_field :name
+  p
+    = f.label :url
+    = f.select :url, Badge::BADGES_URLS
+  p
+    = f.label :rule_value
+    = f.text_field :rule_value
+  p
+    = f.label :rule_name
+    = f.select :rule_name, Badge::RULE_VALUES
+
+  p
+    = f.submit
