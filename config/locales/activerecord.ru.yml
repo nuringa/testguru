@@ -28,6 +28,8 @@ ru:
       badge:
         name: Название
         url: Картинка
+        rule_value: Проверяемый параметр (если есть)
+        rule_name: Условие достижения
 
     errors:
       models:

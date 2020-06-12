@@ -15,6 +15,7 @@ class Badge < ApplicationRecord
     first_try
     category
     level
+    loser
   ].freeze
 
   has_many :badges_users, dependent: :delete_all

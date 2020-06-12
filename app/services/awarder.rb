@@ -18,17 +18,21 @@ class Awarder
   end
 
   def level(level)
-    return unless @test_passage.successful?
-    #TODO
-    user_successfull_tests.where(level: level)
+    return if !@test_passage.successful? || @user.badges.find_by(rule_name: 'level', rule_value: level)
+
+    user_successfull_tests.where(level: level).uniq.count == Test.where(level: level).count
   end
 
   def category(category)
+    return if !@test_passage.successful? || @user.badges.find_by(rule_name: 'category', rule_value: category)
 
+    user_successfull_tests.where(category_id: @test.category.id).uniq.count == Test.where(category_id: @test.category.id).count
   end
 
   def loser(rule)
+    return if @test_passage.successful? || @user.badges.find_by(rule_name: 'loser')
 
+    @user.tests.merge(TestPassage.where.not(success: true)).uniq.count == Test.all.count
   end
 
   def user_successfull_tests

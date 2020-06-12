@@ -27,6 +27,8 @@ en:
       badge:
         name: Title
         url: Picture
+        rule_value: Value checked (if any)
+        rule_name: Fulfillment condition
 
     errors:
       models:
