@@ -129,4 +129,12 @@ ru:
         submit: "Отправить Отзыв"
   application:
     welcome_back: "Приходите к нам еще!"
+  badges_users:
+    index:
+      header: "Мои достижения"
+      name: "Название"
+      url: "Значок"
+      rule_name: "Условия получения"
+      rule_value: "Значение"
+      header-all: "Все достижения"
 

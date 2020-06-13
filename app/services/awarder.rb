@@ -11,7 +11,7 @@ class Awarder
 
   private
 
-  def first_try(rule_value)
+  def first_try(_rule_value)
     return unless @test_passage.successful?
 
     user_successfull_tests.where(id: @test.id).count == 1
@@ -29,7 +29,7 @@ class Awarder
     user_successfull_tests.where(category_id: @test.category.id).uniq.count == Test.where(category_id: @test.category.id).count
   end
 
-  def loser(rule)
+  def loser(_rule_value)
     return if @test_passage.successful? || @user.badges.find_by(rule_name: 'loser')
 
     @user.tests.merge(TestPassage.where.not(success: true)).uniq.count == Test.all.count

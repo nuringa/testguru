@@ -2,7 +2,9 @@
   .row.justify-content-center
     .mt-5
       = link_to 'Напишите нам', new_feedback_path,
-            class: 'btn btn-outline-secondary link-feedback'
+            class: 'btn btn-outline-secondary mr-3'
+      = link_to 'Достижения', badges_users_path,
+              class: 'btn btn-outline-secondary'
 nav
   .navbar.fixed-bottom.navbar-light.bg-light
     .container.text-center

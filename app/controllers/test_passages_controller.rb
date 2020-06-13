@@ -24,9 +24,9 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       awarded_badges = Awarder.new(@test_passage).call
-      current_user.badges << awarded_badges
+      awarded_badges.each { |badge| current_user.badges << badge }
 
-      session[:urls] = awarded_badges&.pluck(:url)
+      session[:badges] = awarded_badges&.pluck(:name, :url)
 
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)

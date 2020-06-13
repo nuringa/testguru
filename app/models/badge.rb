@@ -22,5 +22,5 @@ class Badge < ApplicationRecord
   has_many :users, through: :badges_users
 
   validates :name, :url, presence: true
-  validates :rule_name, uniqueness: true
+  validates :rule_name, presence: true, uniqueness: { scope: :rule_value }
 end

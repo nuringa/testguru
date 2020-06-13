@@ -4,7 +4,6 @@ tr
   td.align-middle== image_tag(badge.url, class: 'badge-size')
   td.align-middle= badge.rule_name
   td.align-middle= badge.rule_value
-  td.align-middle= link_to t('links.view'), admin_badge_path(badge)
   td.align-middle= link_to t('links.edit'), edit_admin_badge_path(badge)
   td.align-middle= link_to t('links.delete'), admin_badge_path(badge),
           data: {:confirm => t('links.message')}, method: :delete

@@ -126,3 +126,11 @@ en:
         submit: "Send Feedback"
   application:
     welcome_back: "Come back soon!"
+  badges_users:
+    index:
+      header: "My rewards"
+      name: "Title"
+      url: "Picture"
+      rule_name: "Fullfilment conditions"
+      rule_value: "Parameter"
+      header-all: "All badges"

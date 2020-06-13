@@ -1,11 +1,13 @@
 .title.text-info.mt-5
   h1 = t('.header', title: @test_passage.test.title)
 
-  - if session[:urls].any?
+  - if session[:badges].any?
     h4 Вы получили награды:
     .badge-list
-      - session[:urls].each do |url|
-        == image_tag(url, class: 'badge-size mr-1')
+      - session[:badges].each do |badge_details|
+        span
+          == image_tag(badge_details[1], class: 'badge-size mr-1')
+          = badge_details[0]
 
 .container
   .card.mt-5
