@@ -18,21 +18,35 @@ class Awarder
   end
 
   def level(level)
-    return if !@test_passage.successful? || @user.badges.find_by(rule_name: 'level', rule_value: level)
+    return unless @test_passage.successful? && level == @test.level.to_s
 
-    user_successfull_tests.where(level: level).uniq.count == Test.where(level: level).count
+    level_badges_count = @user.badges.where(rule_name: 'level').count
+    user_level_tests = user_successfull_tests.where(level: level)
+    level_tests = Test.where(level: level)
+
+    level_tests.select { |test| user_level_tests.where(id: test.id).count > level_badges_count }
+               .size == level_tests.size
   end
 
   def category(category)
-    return if !@test_passage.successful? || @user.badges.find_by(rule_name: 'category', rule_value: category)
+    return unless @test_passage.successful? && category == @test.category.name
 
-    user_successfull_tests.where(category_id: @test.category.id).uniq.count == Test.where(category_id: @test.category.id).count
+    category_badges_count = @user.badges.where(rule_name: 'category').count
+    user_category_tests = user_successfull_tests.where(category_id: @test.category.id)
+    category_tests = Category.find_by(name: category).tests
+
+    category_tests.select { |test| user_category_tests.where(id: test.id).count > category_badges_count }
+        .size == category_tests.size
   end
 
   def loser(_rule_value)
-    return if @test_passage.successful? || @user.badges.find_by(rule_name: 'loser')
+    return if @test_passage.successful?
 
-    @user.tests.merge(TestPassage.where.not(success: true)).uniq.count == Test.all.count
+    loser_badges_count =  @user.badges.where(rule_name: 'loser').count
+    user_loser_tests = @user.tests.merge(TestPassage.where.not(success: true))
+
+    Test.all.select { |test| user_loser_tests.where(id: test.id).count > loser_badges_count }
+        .size == Test.count
   end
 
   def user_successfull_tests

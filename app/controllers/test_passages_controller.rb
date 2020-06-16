@@ -24,7 +24,7 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       awarded_badges = Awarder.new(@test_passage).call
-      awarded_badges.each { |badge| current_user.badges << badge }
+      current_user.badges << awarded_badges
 
       session[:badges] = awarded_badges&.pluck(:name, :url)
 

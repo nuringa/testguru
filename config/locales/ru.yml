@@ -129,6 +129,12 @@ ru:
         submit: "Отправить Отзыв"
   application:
     welcome_back: "Приходите к нам еще!"
+  badge:
+    rule_name:
+      first_try: Прохождение с первой попытки
+      category: Пройдены все тесты заданной категории
+      level: Пройдены все тесты заданного уровня
+      loser: Провалены все тесты
   badges_users:
     index:
       header: "Мои достижения"

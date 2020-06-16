@@ -7,7 +7,7 @@
   .form-group
     = f.label :url, class: 'col-form-label'
     .col-sm-10
-      = f.select :url, Badge::BADGES_URLS, {}, { class: 'form-control' }
+      = f.select :url, ApplicationHelper::BADGES_URLS, {}, { class: 'form-control' }
   .form-group
     = f.label :rule_value, class: 'col-form-label'
     .col-sm-10
@@ -15,7 +15,7 @@
   .form-group
     = f.label :rule_name, class: 'col-form-label'
     .col-sm-10
-      = f.select :rule_name, Badge::RULE_VALUES, {}, { class: 'form-control' }
+      = f.select :rule_name, t("badge.rule_name.").invert, {}, { class: 'form-control' }
 
   p
     = f.submit

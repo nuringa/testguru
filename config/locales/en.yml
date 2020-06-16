@@ -126,6 +126,12 @@ en:
         submit: "Send Feedback"
   application:
     welcome_back: "Come back soon!"
+  badge:
+    rule_name:
+      first_try: From the first try
+      category: All tests from the selected category
+      level: All tests of the selected level
+      loser: Failed all the tests
   badges_users:
     index:
       header: "My rewards"
