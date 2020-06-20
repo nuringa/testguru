@@ -1,0 +1,8 @@
+.container
+  h1 = t('.header')
+  .row.justify-content-start
+
+    = render 'shared/errors', resource: @badge
+    = render 'form'
+
+  = link_to t('links.back'), admin_tests_path, class: 'btn btn-secondary mt-3'

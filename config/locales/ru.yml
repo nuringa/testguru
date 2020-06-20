@@ -68,6 +68,7 @@ ru:
         actions: Действия
         test_create: Создать тест
         preview_gist: "Просмотреть Gists"
+        preview_badges: "Просмотреть значки"
       show:
         header: Тест '%{title}' уровень %{level}
         questions_header: "Вопросы Теста:"
@@ -101,6 +102,15 @@ ru:
         header: "Опубликованные Gists"
         gist_user: "Отправил:"
         gist_question: "Вопрос"
+    badges:
+      new:
+        header: "Создать новое Достижение"
+      index:
+        header: "Система Достижений"
+        badge_create: "Добавить достижение"
+        name: "Название"
+        url: "Картинка"
+        actions: "Действия"
 
   users:
     sessions:
@@ -119,4 +129,18 @@ ru:
         submit: "Отправить Отзыв"
   application:
     welcome_back: "Приходите к нам еще!"
+  badge:
+    rule_name:
+      first_try: Прохождение с первой попытки
+      category: Пройдены все тесты заданной категории
+      level: Пройдены все тесты заданного уровня
+      loser: Провалены все тесты
+  badges_users:
+    index:
+      header: "Мои достижения"
+      name: "Название"
+      url: "Значок"
+      rule_name: "Условия получения"
+      rule_value: "Значение"
+      header-all: "Все достижения"
 

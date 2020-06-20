@@ -1,0 +1,7 @@
+.container
+  h1 == "Редактировать #{@badge.name}"
+  .row.justify-content-start
+    = render 'shared/errors', resource: @test
+    = render 'form'
+
+  = link_to t('links.back'), admin_tests_path, class: 'btn btn-secondary mt-3'

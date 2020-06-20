@@ -1,0 +1,28 @@
+.container
+  .row.justify-content-center
+    .col-auto
+      h1
+        .title.text-info = t('.header-all')
+      .badge-list
+        - @badges.each do |badge|
+          span
+            == image_tag(badge.url, class: 'badge-size mr-2')
+            span.description.mr-3 = badge.name
+
+  .row.justify-content-start.mt-5
+    .col-auto
+      h1
+        .title.text-info = t('.header')
+
+      .container
+        .table.table-hover
+          table.tests-table
+            tr
+              th = t('.name')
+              th = t('.url')
+
+              = render partial: 'badges_user', collection: @badges_users
+
+
+          .mt-5
+            = link_to t('links.back'), tests_path, class: 'btn btn-info'

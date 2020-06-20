@@ -6,6 +6,7 @@ ru:
       answer: Ответ
       user: Пользователь
       feedback: Отзыв
+      badge: Достижение
 
     attributes:
       user:
@@ -24,6 +25,11 @@ ru:
         name: Имя
         subject: Тема
         message: Сообщение
+      badge:
+        name: Название
+        url: Картинка
+        rule_value: Проверяемый параметр (если есть)
+        rule_name: Условие достижения
 
     errors:
       models:
