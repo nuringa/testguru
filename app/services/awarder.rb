@@ -20,23 +20,31 @@ class Awarder
   def level(level)
     return unless @test_passage.successful? && level == @test.level.to_s
 
-    level_badges_count = @user.badges.where(rule_name: 'level').count
-    user_level_tests = user_successfull_tests.where(level: level)
-    level_tests = Test.where(level: level)
+    last_award_date = user_badge_awards('level', level).order(created_at: :desc).first&.created_at
 
-    level_tests.select { |test| user_level_tests.where(id: test.id).count > level_badges_count }
-               .size == level_tests.size
+    user_level_tests = if last_award_date.present?
+                         user_successfull_tests.where(level: level)
+                                               .merge(TestPassage.where("test_passages.created_at > ?", last_award_date ))
+                       else
+                         user_successfull_tests.where(level: level)
+                       end
+
+    user_level_tests.distinct.count == Test.where(level: level).count
   end
 
   def category(category)
     return unless @test_passage.successful? && category == @test.category.name
+    
+    last_award_date = user_badge_awards('category', category).order(created_at: :desc).first&.created_at
 
-    category_badges_count = @user.badges.where(rule_name: 'category').count
-    user_category_tests = user_successfull_tests.where(category_id: @test.category.id)
-    category_tests = Category.find_by(name: category).tests
+    user_level_tests = if last_award_date.present?
+                         user_successfull_tests.where(category_id: @test.category.id)
+                                               .merge(TestPassage.where("test_passages.created_at > ?", last_award_date ))
+                       else
+                         user_successfull_tests.where(category_id: @test.category.id)
+                       end
 
-    category_tests.select { |test| user_category_tests.where(id: test.id).count > category_badges_count }
-        .size == category_tests.size
+    user_level_tests.distinct.count == Test.where(category_id: @test.category.id).count
   end
 
   def loser(_rule_value)
@@ -51,5 +59,9 @@ class Awarder
 
   def user_successfull_tests
     @user.tests.merge(TestPassage.where(success: true))
+  end
+
+  def user_badge_awards(rule_name, rule_value)
+    @user.badges_users.where(badge: Badge.where(rule_name: rule_name, rule_value: rule_value))
   end
 end
