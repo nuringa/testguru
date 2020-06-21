@@ -1,6 +1,13 @@
 .title.text-info
   h1 = t('.header', title: @test_passage.test.title)
 
+- if @test_passage.timer?
+  = content_tag :div, id: 'timer', class: 'mb-2',
+        data: {timer: @test_passage.timer, time_left: @test_passage.time_left} do
+    .row.justify-content-md-center
+      = t('.timer-remaining')
+      span#counter = @test_passage.time_left
+
 .progress
   = content_tag :div, "#{@test_passage.correct_per_cent} %", class: 'progress-bar progress-bar-danger', \
     role: 'progressbar', data: { width: @test_passage.correct_per_cent }

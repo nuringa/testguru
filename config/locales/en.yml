@@ -54,6 +54,7 @@ en:
       next: "Next"
       gist_question: "Gist Question"
       header: "Passing the '%{title}' Test"
+      timer-remaining: "Time left(sec.)"
 
   admin:
     tests:

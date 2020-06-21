@@ -22,7 +22,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || @test_passage.time_over?
       awarded_badges = Awarder.new(@test_passage).call
       current_user.badges << awarded_badges
 
