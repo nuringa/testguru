@@ -1,5 +1,5 @@
 # TestGuru
-
+test rebase new branch
 приложение на Ruby on Rails в рамках курса от thinknetica
 
 **_Список примерных моделей для TestGuru:_**
