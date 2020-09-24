@@ -1,11 +1,34 @@
-# TestGuru
-изменения на мастере
 приложение на Ruby on Rails в рамках курса от thinknetica
 
-**_Список примерных моделей для TestGuru:_**
+**_TestGuru:_**
 
-1. User(name, email, password, admin)
-2. Test(name, category, questions)
-3. Question(name, body, answers, test_id)
-4. Answer(name, body, correct_answer, question_id)
-4. TestProcess(user_id, test_id, time, result)
+An app for creating, managing and executing different tests with questions and answers to them.
+
+Main features:
+
+    Creating and managing tests
+
+    Authentication
+
+    Basic access control
+
+    Executing tests
+
+2 user groups:
+
+    users choosing and running tests,
+    admins who create tests and manages them
+
+Objects list
+
+    Test
+
+    Question
+
+    Answer
+
+    Category
+
+    Result
+
+    User
