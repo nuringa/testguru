@@ -10,4 +10,7 @@
     = f.label :category_id
     = f.collection_select :category_id, Category.all, :id, :name, prompt: true
   p
+    = f.label :time
+    = f.number_field :time
+  p
     = f.submit

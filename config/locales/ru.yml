@@ -57,6 +57,7 @@ ru:
       next: "Дальше"
       gist_question: "Сохранить в Gist"
       header: "Прохождение теста '%{title}'"
+      timer-remaining: "Осталось(сек.)"
 
   admin:
     tests:
